@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -12,14 +12,14 @@ class EnrollmentController extends Controller
     public function index()
     {
         $enrollments = Enrollment::with('user', 'course')->get();
-        return view('enrollments.index', compact('enrollments'));
+        return response()->json(['enrollments' => $enrollments]);
     }
 
     public function create()
     {
         $users = User::all();
         $courses = Course::all();
-        return view('enrollments.create', compact('users', 'courses'));
+        return response()->json(['users' => $users, 'courses' => $courses]);
     }
 
     public function store(Request $request)
@@ -29,21 +29,21 @@ class EnrollmentController extends Controller
             'course_id' => 'required|exists:courses,id',
         ]);
 
-        Enrollment::create($request->all());
+        $enrollment = Enrollment::create($request->all());
 
-        return redirect()->route('enrollments.index')->with('success', 'Enrollment created successfully.');
+        return response()->json(['message' => 'Enrollment created successfully.', 'enrollment' => $enrollment]);
     }
 
     public function show(Enrollment $enrollment)
     {
-        return view('enrollments.show', compact('enrollment'));
+        return response()->json(['enrollment' => $enrollment]);
     }
 
     public function edit(Enrollment $enrollment)
     {
         $users = User::all();
         $courses = Course::all();
-        return view('enrollments.edit', compact('enrollment', 'users', 'courses'));
+        return response()->json(['enrollment' => $enrollment, 'users' => $users, 'courses' => $courses]);
     }
 
     public function update(Request $request, Enrollment $enrollment)
@@ -55,13 +55,13 @@ class EnrollmentController extends Controller
 
         $enrollment->update($request->all());
 
-        return redirect()->route('enrollments.index')->with('success', 'Enrollment updated successfully.');
+        return response()->json(['message' => 'Enrollment updated successfully.', 'enrollment' => $enrollment]);
     }
 
     public function destroy(Enrollment $enrollment)
     {
         $enrollment->delete();
 
-        return redirect()->route('enrollments.index')->with('success', 'Enrollment deleted successfully.');
+        return response()->json(['message' => 'Enrollment deleted successfully.']);
     }
 }
