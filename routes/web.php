@@ -19,12 +19,3 @@ use App\Http\Controllers\EnrollmentController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-// Route::resource('courses', CourseController::class);
-
-// Route::resource('users', UserController::class);
-
-// Route::resource('enrollments', EnrollmentController::class);
-
-// Route::get('users/{user}/enrollments', [UserController::class, 'enrollments'])->name('users.enrollments');
