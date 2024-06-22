@@ -18,8 +18,8 @@ To run Backend application .
 * and then type 'php artisan db:seed --class=AdminSeeder'
 * then 'php artisan serve'
 
-Link for Application download - https://github.com/lakshanmaduwantha/Online-Learning-Platform-Backend
-Postman API Link - https://api.postman.com/collections/24867964-1504aad0-c7f0-4da6-8bf6-20aba44d4b69?access_key=PMAT-01J0YXP2D24MP3WFEXH89ZHNH7
+* Link for Application download - https://github.com/lakshanmaduwantha/Online-Learning-Platform-Backend
+* Postman API Link - https://api.postman.com/collections/24867964-1504aad0-c7f0-4da6-8bf6-20aba44d4b69?access_key=PMAT-01J0YXP2D24MP3WFEXH89ZHNH7
 
 ![Screenshot (169)](https://github.com/lakshanmaduwantha/Online-Learning-Platform-Backend/assets/78168064/9fafa080-c92e-4130-9c5a-68a4ebad8875)
 ![Screenshot (168)](https://github.com/lakshanmaduwantha/Online-Learning-Platform-Backend/assets/78168064/01a57531-802f-44fa-9b5a-554353854230)
